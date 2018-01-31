@@ -51,8 +51,8 @@ def upload():
             filename = secure_filename(file.filename)
             # print(filename.split("."))
             try:
-                os.remove(UPLOAD_FOLDER + "/input.*")
-                os.remove(UPLOAD_FOLDER + "/output.*")
+                os.system("rm {}/input.*"format())
+                os.system("rm {}/output.*".format(UPLOAD_FOLDER))
             except Exception:
                 pass
             input_img = "input." + filename.split(".")[1]
