@@ -51,7 +51,7 @@ def upload():
             filename = secure_filename(file.filename)
             # print(filename.split("."))
             try:
-                os.system("rm {}/input.*"format(UPLOAD_FOLDER))
+                os.system("rm {}/input.*".format(UPLOAD_FOLDER))
                 os.system("rm {}/output.*".format(UPLOAD_FOLDER))
             except Exception:
                 pass
