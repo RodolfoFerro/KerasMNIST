@@ -1,0 +1,26 @@
+{% extends "process.html" %}
+{% block results %}
+  <!-- About -->
+  <section class="content-section bg-light" id="results">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Results</h3>
+          </div>
+          <h2>What I've predicted:</h2>
+          <h1 style="color:red;">{{ prediction }}</h1><br /><br />
+          <h3>Input / Output Images:</h3>
+          <img src="../static/img/{{input_img}}" width="45%"/>
+          <img src="../static/img/{{output_img}}" width="45%"/>
+          <br /><br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a href="/" class="btn btn-xl btn-dark mb-5">Back to site</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

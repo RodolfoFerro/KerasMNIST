@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+{% block content %}
+  <!-- Call to Action -->
+  <section class="content-section bg-primary text-white">
+    <div class="container text-center">
+      <img src="../static/img/try_it.png" width="30%"/>
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Processing</h3>
+      </div>
+      <h2 class="mb-4">Let's do this!</h2>
+      {% if error %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <strong>Oh, snap!</strong> Are you trying to upload a <strong>jpg</strong> file?
+      </div>
+      {% endif %}
+      {% if not input_img %}
+      <form method="POST" action="/upload" class="container text-center" enctype="multipart/form-data">
+        <div class="row text-center">
+          <div class="col">
+            <label for="file_name">Upload file:</label><br />
+            <input type="file" class="btn btn-xl btn-light col-md-6 mb-5" name="file_name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input class="btn btn-xl btn-light mb-5" type="submit" value="Process pic"/>
+            <a href="/" class="btn btn-xl btn-light mb-5">Back to site</a>
+            <!-- <a href="#" class="btn btn-xl btn-dark">Procesar datos</a> -->
+          </div>
+        </div>
+      </form>
+      {% else %}
+        <a class="btn btn-dark btn-xl js-scroll-trigger" href="#results">Checkout results!</a>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- About -->
+  {% block results %}
+  {% endblock %}
+{% endblock %}

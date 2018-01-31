@@ -1,0 +1,81 @@
+{% extends "template.html" %}
+{% block content %}
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">{{ name }}</h1>
+      <h3 class="mb-5">
+        <em>An Online AI Classifier Trained With the <a href="https://en.wikipedia.org/wiki/MNIST_database" target="_blank">MNIST Dataset</a>...</em>
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Know More</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">About</h3>
+          </div>
+          <h2>CNN Architecture at glance</h2>
+          <img src="../static/img/model.svg" width="80%"/>
+          <p class="lead mb-5">This is the architecture of the <i>Convolutional Neural Network</i> used to classify the Handwritten Digits.</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">How it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Process</h3>
+        <h2 class="mb-5">How it works</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Write any number</strong>
+          </h4>
+          <p class="text-faded mb-0">Write any integer number in a piece of paper or any smooth surface.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Take a picture </strong>
+          </h4>
+          <p class="text-faded mb-0">Take a picture of the written number with your phone!</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-cloud-upload"></i>
+          </span>
+          <h4>
+            <strong>Upload the picture</strong>
+          </h4>
+          <p class="text-faded mb-0">Push the <i style="color:#ecb807;">Try it now!</i> button and upload the picture.</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-picture"></i>
+          </span>
+          <h4>
+            <strong>Check the results</strong>
+          </h4>
+          <p class="text-faded mb-0">Checkout the results obtained!</p>
+        </div>
+      </div>
+      <br /><br />
+      <a class="btn btn-xl btn-light mr-4 js-scroll-trigger" href="/process">Try it now!</a>
+    </div>
+  </section>
+{% endblock %}
