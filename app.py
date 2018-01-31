@@ -50,8 +50,8 @@ def upload():
             print(file)
             filename = secure_filename(file.filename)
             # print(filename.split("."))
-            os.remove(UPLOAD_FOLDER + "input.*")
-            os.remove(UPLOAD_FOLDER + "output.*")
+            os.remove(UPLOAD_FOLDER + "/input.*")
+            os.remove(UPLOAD_FOLDER + "/output.*")
             input_img = "input." + filename.split(".")[1]
             output_img = "output." + filename.split(".")[1]
             destination = "/".join([target, input_img])
