@@ -3,4 +3,4 @@ flask
 keras
 tensorflow
 h5py
-opencv-python
+opencv-python==3.1
