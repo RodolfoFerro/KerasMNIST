@@ -1,3 +1,6 @@
 gunicorn
 flask
 keras
+tensorflow
+h5py
+opencv-python
