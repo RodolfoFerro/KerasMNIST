@@ -29,6 +29,14 @@ def process_img(input_img):
     # Read the input image
     im = cv2.imread("static/img/" + input_img)
 
+    # Resize image if necessary:
+    if im.shape[1] > 3000 or im.shape[0] > 3000:
+        im = cv2.resize(im, (im.shape[1]//8, im.shape[0]//8))
+    elif im.shape[1] > 2000 or im.shape[0] > 2000:
+            im = cv2.resize(im, (im.shape[1]//4, im.shape[0]//4))
+    elif im.shape[1] > 1000 or im.shape[0] > 1000:
+        im = cv2.resize(im, (im.shape[1]//2, im.shape[0]//2))
+
     # Convert to grayscale and apply Gaussian filtering
     im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     im_gray = cv2.GaussianBlur(im_gray, (5, 5), 0)
