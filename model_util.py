@@ -1,5 +1,4 @@
 from keras.models import model_from_json
-import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
@@ -87,5 +86,5 @@ def predict(model, im, im_th, rects, output_img):
                     cv2.FONT_HERSHEY_DUPLEX, 2, (50, 190, 255), 3)
 
     # Save results:
-    plt.imsave("static/img/" + output_img, im)
+    cv2.imwrite("static/img/" + output_img, im)
     return ''.join(map(str, res))
