@@ -62,7 +62,7 @@ def process_img(input_img):
 
 def predict(model, im, im_th, rects, output_img):
     """Predicting function."""
-    
+
     # Results:
     res = []
 
