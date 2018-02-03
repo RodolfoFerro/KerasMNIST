@@ -4,6 +4,8 @@ import cv2
 
 
 def load_model():
+    """Load a trained model."""
+
     # Open model from JSON:
     json_file = open('model.json', 'r')
     model_json = json_file.read()
@@ -20,11 +22,15 @@ def load_model():
     # model.compile(loss='binary_crossentropy',
     #               optimizer='adam',
     #               metrics=['accuracy'])
+
+    # Make predict function:
     model._make_predict_function()
     return model
 
 
 def process_img(input_img):
+    """A simple yet useful image processing."""
+
     # Read the input image
     im = cv2.imread("static/img/" + input_img)
 
@@ -36,11 +42,11 @@ def process_img(input_img):
     elif im.shape[1] > 1000 or im.shape[0] > 1000:
         im = cv2.resize(im, (im.shape[1]//2, im.shape[0]//2))
 
-    # Convert to grayscale and apply Gaussian filtering
+    # Convert to grayscale and apply Gaussian filtering:
     im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     im_gray = cv2.GaussianBlur(im_gray, (5, 5), 0)
 
-    # Threshold the image
+    # Threshold the image:
     ret, im_th = cv2.threshold(im_gray, 90, 255, cv2.THRESH_BINARY_INV)
 
     # Find contours in the image:
@@ -55,6 +61,8 @@ def process_img(input_img):
 
 
 def predict(model, im, im_th, rects, output_img):
+    """Predicting function."""
+    
     # Results:
     res = []
 
